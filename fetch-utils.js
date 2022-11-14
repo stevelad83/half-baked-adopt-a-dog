@@ -9,7 +9,7 @@ export async function getDogs() {
     // from the dogs table, select all items
     // and return the response
     console.log(response);
-    return response;
+    return response.data;
 }
 
 export async function getDog(id) {
