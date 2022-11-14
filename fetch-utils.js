@@ -8,7 +8,6 @@ export async function getDogs() {
     const response = await client.from('dogs').select();
     // from the dogs table, select all items
     // and return the response
-    console.log(response);
     return response.data;
 }
 
