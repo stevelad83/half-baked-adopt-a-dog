@@ -5,11 +5,15 @@ const SUPABASE_KEY =
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getDogs() {
+    const response = await client.from('dogs').select();
     // from the dogs table, select all items
     // and return the response
+    return response.data;
 }
 
 export async function getDog(id) {
     // from the dogs table, select a single dog who has the matching id
     // and return the response
+    const response = await client.from('dogs').select('*').match({ id: id }).single();
+    return response.data;
 }
